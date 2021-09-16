@@ -3,14 +3,14 @@
 A developer oriented, headless ecommerce framework based on Spring + GraphQL + Angular.
 
 > **Headless** means GeekStore only focus on backend, it does not care which frontend stack you use.
-> GeekStore is built for developers, it only exposes a group of ecommerce APIs(in GraphQL), by call these APIs, developers
+> GeekStore is built for developers, it only exposes a group of ecommerce APIs(in GraphQL), by calling these APIs, developers
 > can query data(such as query product data), or mutate data(such as add item with id '123' into current order).
 > So, if you want to develop ecommerce application based on GeekStore, you just need to implement the store frontend
 > based on your specific business needs. For example, you can leverage Angular/React/Vue, whatever frontend stack you like to build your store
 > frontend. You just don't need to re-build the backend, since GeekShop is already there, it's an ecommerce platform
 > without a 'head'.
 
-> GeekStore is licensed with MIT license, you can change/extend it as you need.
+> GeekStore is licensed with MIT license, you can change/extend as you need.
 
 **Note, GeekStore is only for POC & learning purpose now.**.
 
