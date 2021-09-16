@@ -1,0 +1,5 @@
+mutation DeletePromotionAdHoc1($id: ID!) {
+    deletePromotion(id: $id) {
+        result
+    }
+}

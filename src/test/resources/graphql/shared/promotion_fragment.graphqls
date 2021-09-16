@@ -1,0 +1,16 @@
+fragment Promotion on Promotion {
+    id
+    createdAt
+    updatedAt
+    couponCode
+    startsAt
+    endsAt
+    name
+    enabled
+    conditions {
+        ...ConfigurableOperation
+    }
+    actions {
+        ...ConfigurableOperation
+    }
+}

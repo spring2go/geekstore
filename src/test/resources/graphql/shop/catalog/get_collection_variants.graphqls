@@ -1,0 +1,11 @@
+query GetCollectionVariants($id: ID, $slug: String) {
+    collection(id: $id, slug: $slug) {
+        id
+        productVariants {
+            items {
+                id
+                name
+            }
+        }
+    }
+}

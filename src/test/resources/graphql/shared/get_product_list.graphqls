@@ -1,0 +1,14 @@
+query GetProductList($options: ProductListOptions) {
+    adminProducts(options: $options) {
+        items {
+            id
+            name
+            slug
+            featuredAsset {
+                id
+                preview
+            }
+        }
+        totalItems
+    }
+}

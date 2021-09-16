@@ -1,0 +1,11 @@
+mutation CreateCollectionSelectVariants($input: CreateCollectionInput!) {
+    createCollection(input: $input) {
+        id
+        productVariants {
+            items {
+                name
+            }
+            totalItems
+        }
+    }
+}

@@ -1,0 +1,9 @@
+query GetCustomerGroups($options: CustomerGroupListOptions) {
+    customerGroups(options: $options) {
+        items {
+            id
+            name
+        }
+        totalItems
+    }
+}

@@ -1,0 +1,10 @@
+mutation SetShippingMethod($id: ID!) {
+    setOrderShippingMethod(shippingMethodId: $id) {
+        shipping
+        shippingMethod {
+            id
+            code
+            description
+        }
+    }
+}

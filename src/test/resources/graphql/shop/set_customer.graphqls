@@ -1,0 +1,11 @@
+mutation SetCustomerForOrder($input: CreateCustomerInput!) {
+    setCustomerForOrder(input: $input) {
+        id
+        customer {
+            id
+            emailAddress
+            firstName
+            lastName
+        }
+    }
+}

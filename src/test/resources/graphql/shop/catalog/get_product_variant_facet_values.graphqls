@@ -1,0 +1,12 @@
+query GetVariantFacetValues($id: ID) {
+    product(id: $id) {
+        id
+        name
+        variants {
+            id
+            facetValues {
+                name
+            }
+        }
+    }
+}

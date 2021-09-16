@@ -1,0 +1,13 @@
+mutation RemoveOptionGroupFromProduct($productId: ID!, $optionGroupId: ID!) {
+    removeOptionGroupFromProduct(productId: $productId, optionGroupId: $optionGroupId) {
+        id
+        optionGroups {
+            id
+            code
+            options {
+                id
+                code
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+extend type Query {
+    globalSettings: GlobalSettings!
+}
+
+extend type Mutation {
+    updateGlobalSettings(input: UpdateGlobalSettingsInput!): GlobalSettings!
+}
+
+input UpdateGlobalSettingsInput {
+    trackInventory: Boolean
+}

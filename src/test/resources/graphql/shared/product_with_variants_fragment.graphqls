@@ -1,0 +1,30 @@
+fragment ProductWithVariants on Product {
+    id
+    enabled
+    name
+    slug
+    description
+    featuredAsset {
+        ...Asset
+    }
+    assets {
+        ...Asset
+    }
+    optionGroups {
+        id
+        code
+        name
+    }
+    variants {
+        ...ProductVariant
+    }
+    facetValues {
+        id
+        code
+        name
+        facet {
+            id
+            name
+        }
+    }
+}

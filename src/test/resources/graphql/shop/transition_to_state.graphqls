@@ -1,0 +1,6 @@
+mutation TransitionToState($state: String!) {
+    transitionOrderToState(state: $state) {
+        id
+        state
+    }
+}

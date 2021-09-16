@@ -1,0 +1,12 @@
+query GetCollectionsWithAssets {
+    adminCollections {
+        items {
+            id
+            name
+            position
+            assets {
+                name
+            }
+        }
+    }
+}

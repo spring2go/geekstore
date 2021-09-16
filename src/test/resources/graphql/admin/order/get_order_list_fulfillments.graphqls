@@ -1,0 +1,11 @@
+query GetOrderListFullfilments {
+    orders {
+        items {
+            id
+            fulfillments {
+                id
+                method
+            }
+        }
+    }
+}

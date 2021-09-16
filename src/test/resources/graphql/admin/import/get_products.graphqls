@@ -1,0 +1,78 @@
+query GetProducts($options: ProductListOptions) {
+    adminProducts(options: $options) {
+        totalItems
+        items {
+            id
+            name
+            slug
+            description
+            featuredAsset {
+                id
+                name
+                preview
+                source
+            }
+            assets {
+                id
+                name
+                preview
+                source
+            }
+            optionGroups {
+                id
+                code
+                name
+            }
+            facetValues {
+                id
+                name
+                facet {
+                    id
+                    name
+                }
+            }
+            variants {
+                id
+                name
+                sku
+                price
+                options {
+                    id
+                    code
+                }
+                assets {
+                    id
+                    name
+                    preview
+                    source
+                }
+                featuredAsset {
+                    id
+                    name
+                    preview
+                    source
+                }
+                facetValues {
+                    id
+                    code
+                    name
+                    facet {
+                        id
+                        name
+                    }
+                }
+                stockOnHand
+                trackInventory
+                stockMovements {
+                    items {
+                        ... on StockMovement {
+                            id
+                            type
+                            quantity
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

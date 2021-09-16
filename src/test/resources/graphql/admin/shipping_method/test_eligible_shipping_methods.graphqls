@@ -1,0 +1,8 @@
+query TestEligibleMethods($input: TestEligibleShippingMethodsInput!) {
+    testEligibleShippingMethods(input: $input) {
+        id
+        description
+        price
+        metadata
+    }
+}

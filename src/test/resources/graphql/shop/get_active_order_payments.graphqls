@@ -1,0 +1,14 @@
+query GetActiveOrderPayments {
+    activeOrder {
+        id
+        payments {
+            id
+            transactionId
+            method
+            amount
+            state
+            errorMessage
+            metadata
+        }
+    }
+}

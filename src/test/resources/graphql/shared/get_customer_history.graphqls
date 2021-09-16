@@ -1,0 +1,18 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+query GetCustomerHistory($id: ID!, $options: HistoryEntryListOptions) {
+    customer(id: $id) {
+        id
+        history(options: $options) {
+            totalItems
+            items {
+                id
+                administrator {
+                    id
+                }
+                type
+                data
+            }
+        }
+    }
+}

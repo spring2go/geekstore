@@ -1,0 +1,5 @@
+query GetShippingMethod($id: ID!) {
+    shippingMethod(id: $id) {
+        ...ShippingMethod
+    }
+}

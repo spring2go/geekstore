@@ -1,0 +1,10 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+query GetRoles($options: RoleListOptions) {
+    roles(options: $options) {
+        items {
+            ...Role
+        }
+        totalItems
+    }
+}

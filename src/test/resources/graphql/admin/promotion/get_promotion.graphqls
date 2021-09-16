@@ -1,0 +1,5 @@
+query GetPromotion($id: ID!) {
+    promotion(id: $id) {
+        ...Promotion
+    }
+}

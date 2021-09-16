@@ -1,0 +1,78 @@
+extend type Query {
+    facets(options: FacetListOptions): FacetList!
+    facet(id: ID!): Facet
+}
+
+extend type Mutation {
+    "Create a new Facet"
+    createFacet(input: CreateFacetInput!): Facet!
+
+    "Update an existing Facet"
+    updateFacet(input: UpdateFacetInput!): Facet!
+
+    "Delete an existing Facet"
+    deleteFacet(id: ID!): DeletionResponse!
+
+    "Create one or more FacetValues"
+    createFacetValues(input: [CreateFacetValueInput!]!): [FacetValue!]!
+
+    "Update one or more FacetValues"
+    updateFacetValues(input: [UpdateFacetValueInput!]!): [FacetValue!]!
+
+    "Delete one or more FacetValues"
+    deleteFacetValues(ids: [ID!]!): [DeletionResponse!]!
+}
+
+input FacetListOptions {
+    currentPage: Int
+    pageSize: Int
+    sort: FacetSortParameter
+    filter: FacetFilterParameter
+}
+
+input CreateFacetInput {
+    code: String!
+    privateOnly: Boolean!
+    name: String!
+    values: [CreateFacetValueWithFacetInput!]
+}
+
+input UpdateFacetInput {
+    id: ID!
+    privateOnly: Boolean
+    code: String
+    name: String
+}
+
+input CreateFacetValueWithFacetInput {
+    code: String!
+    name: String
+}
+
+input CreateFacetValueInput {
+    facetId: ID!
+    code: String
+    name: String
+}
+
+input UpdateFacetValueInput {
+    id: ID!
+    code: String
+    name: String
+}
+
+input FacetSortParameter {
+    id: SortOrder
+    createdAt: SortOrder
+    updatedAt: SortOrder
+    name: SortOrder
+    code: SortOrder
+}
+
+input FacetFilterParameter {
+    name: StringOperators
+    code: StringOperators
+    privateOnly: BooleanOperators # admin only
+    createdAt: DateOperators
+    updatedAt: DateOperators
+}

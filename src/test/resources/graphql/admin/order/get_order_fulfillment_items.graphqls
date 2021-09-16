@@ -1,0 +1,11 @@
+query GetOrderFulfillmentItems($id: ID!) {
+    orderByAdmin(id: $id) {
+        id
+        fulfillments {
+            id
+            orderItems {
+                id
+            }
+        }
+    }
+}

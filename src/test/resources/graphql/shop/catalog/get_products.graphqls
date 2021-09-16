@@ -1,0 +1,7 @@
+query GetProductsTake3 {
+    products(options: { currentPage: 0, pageSize: 3}) {
+        items {
+            id
+        }
+    }
+}

@@ -1,0 +1,7 @@
+mutation SettlePayment($id: ID!) {
+    settlePayment(id: $id) {
+        id
+        state
+        metadata
+    }
+}

@@ -1,0 +1,6 @@
+mutation DeleteOrderNote($id: ID!) {
+    deleteOrderNote(id: $id) {
+        result
+        message
+    }
+}

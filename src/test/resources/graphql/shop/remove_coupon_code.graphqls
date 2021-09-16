@@ -1,0 +1,5 @@
+mutation RemoveCouponCode($couponCode: String!) {
+    removeCouponCode(couponCode: $couponCode) {
+        ...TestOrderFragment
+    }
+}

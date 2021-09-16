@@ -1,0 +1,9 @@
+fragment Asset on Asset {
+    id
+    name
+    fileSize
+    mimeType
+    type
+    preview
+    source
+}

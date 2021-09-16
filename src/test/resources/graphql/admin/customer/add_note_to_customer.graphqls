@@ -1,0 +1,7 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+mutation AddNoteToCustomer($input: AddNoteToCustomerInput!) {
+    addNoteToCustomer(input: $input) {
+        ...Customer
+    }
+}

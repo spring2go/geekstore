@@ -1,0 +1,26 @@
+query SearchGetAssets($input: SearchInput!) {
+    searchByAdmin(input: $input) {
+        totalItems
+        items {
+            productId
+            productName
+            productVariantName
+            productAsset {
+                id
+                preview
+                focalPoint {
+                    x
+                    y
+                }
+            }
+            productVariantAsset {
+                id
+                preview
+                focalPoint {
+                    x
+                    y
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+query GetCollectionBreadcrumbs($id: ID) {
+    adminCollection(id: $id) {
+        breadcrumbs {
+            id
+            name
+            slug
+        }
+    }
+}

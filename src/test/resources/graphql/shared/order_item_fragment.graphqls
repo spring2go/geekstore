@@ -1,0 +1,8 @@
+fragment OrderItem on OrderItem {
+    id
+    cancelled
+    unitPrice
+    fulfillment {
+        id
+    }
+}

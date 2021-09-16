@@ -1,0 +1,5 @@
+mutation RemoveItemFromOrder($orderLineId: ID!) {
+    removeOrderLine(orderLineId: $orderLineId) {
+        ...TestOrderFragment
+    }
+}

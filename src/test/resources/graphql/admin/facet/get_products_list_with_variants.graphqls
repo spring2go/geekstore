@@ -1,0 +1,13 @@
+query GetProductListWithVariants {
+    adminProducts {
+        items {
+            id
+            name
+            variants {
+                id
+                name
+            }
+        }
+        totalItems
+    }
+}

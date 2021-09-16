@@ -1,0 +1,8 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+mutation CreateCustomerAddress($customerId: ID!, $input: CreateAddressInput!) {
+    adminCreateCustomerAddress(customerId: $customerId, input: $input) {
+        id
+        streetLine1
+    }
+}

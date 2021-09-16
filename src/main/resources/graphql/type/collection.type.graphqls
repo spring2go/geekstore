@@ -1,0 +1,65 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+type Collection implements Node {
+    id: ID!
+    privateOnly: Boolean! # admin only
+    createdAt: DateTime!
+    updatedAt: DateTime!
+    name: String!
+    slug: String!
+    breadcrumbs: [CollectionBreadcrumb!]!
+    position: Int!
+    description: String!
+    featuredAsset: Asset
+    assets: [Asset!]!
+    parent: Collection
+    children: [Collection!]
+    filters: [ConfigurableOperation!]!
+    productVariants(options: ProductVariantListOptions): ProductVariantList!
+}
+
+type CollectionBreadcrumb {
+    id: ID!
+    name: String!
+    slug: String!
+}
+
+type CollectionList implements PaginatedList {
+    items: [Collection!]!
+    totalItems: Int!
+}
+
+type ProductVariantList implements PaginatedList {
+    items: [ProductVariant!]!
+    totalItems: Int!
+}
+
+input ProductVariantListOptions {
+    currentPage: Int
+    pageSize: Int
+    sort: ProductVariantSortParameter
+    filter: ProductVariantFilterParameter
+}
+
+input ProductVariantSortParameter {
+    stockOnHand: SortOrder
+    id: SortOrder
+    productId: SortOrder
+    createdAt: SortOrder
+    updatedAt: SortOrder
+    sku: SortOrder
+    name: SortOrder
+    price: SortOrder
+}
+
+input ProductVariantFilterParameter {
+    enabled: BooleanOperators
+    stockOnHand: NumberOperators
+    trackInventory: BooleanOperators
+    createdAt: DateOperators
+    updatedAt: DateOperators
+    sku: StringOperators
+    name: StringOperators
+    price: NumberOperators
+}
+

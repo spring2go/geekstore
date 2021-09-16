@@ -1,0 +1,6 @@
+mutation DeleteFacet($id: ID!) {
+    deleteFacet(id: $id) {
+        result
+        message
+    }
+}

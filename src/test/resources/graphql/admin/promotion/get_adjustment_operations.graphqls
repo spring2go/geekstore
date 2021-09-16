@@ -1,0 +1,8 @@
+query GetAdjustmentOperations {
+    promotionActions {
+        ...ConfigurableOperationDef
+    }
+    promotionConditions {
+        ...ConfigurableOperationDef
+    }
+}

@@ -1,0 +1,17 @@
+query GetPromoProducts {
+    adminProducts {
+        items {
+            id
+            slug
+            variants {
+                id
+                price
+                sku
+                facetValues {
+                    id
+                    code
+                }
+            }
+        }
+    }
+}

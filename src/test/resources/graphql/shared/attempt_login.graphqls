@@ -1,0 +1,7 @@
+mutation AttemptLogin($username: String!, $password: String!, $rememberMe: Boolean) {
+    login(username: $username, password: $password, rememberMe: $rememberMe) {
+        user {
+            ...CurrentUser
+        }
+    }
+}

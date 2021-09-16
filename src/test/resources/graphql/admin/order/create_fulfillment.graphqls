@@ -1,0 +1,10 @@
+mutation CreateFulfillment($input: FulfillOrderInput!) {
+    fulfillOrder(input: $input) {
+        id
+        method
+        trackingCode
+        orderItems {
+            id
+        }
+    }
+}

@@ -1,0 +1,5 @@
+query GetProductWithVariants($id: ID, $slug: String) {
+    adminProduct(slug: $slug, id: $id) {
+        ...ProductWithVariants
+    }
+}

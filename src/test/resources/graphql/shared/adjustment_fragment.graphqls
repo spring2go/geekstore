@@ -1,0 +1,6 @@
+fragment Adjustment on Adjustment {
+    adjustmentSource
+    amount
+    description
+    type
+}

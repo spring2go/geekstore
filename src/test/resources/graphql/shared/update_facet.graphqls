@@ -1,0 +1,5 @@
+mutation UpdateFacet($input: UpdateFacetInput!) {
+    updateFacet(input: $input) {
+        ...FacetWithValues
+    }
+}

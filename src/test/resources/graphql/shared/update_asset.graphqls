@@ -1,0 +1,9 @@
+mutation UpdateAsset($input: UpdateAssetInput!) {
+    updateAsset(input: $input) {
+        ...Asset
+        focalPoint {
+            x
+            y
+        }
+    }
+}

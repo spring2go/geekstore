@@ -1,0 +1,5 @@
+query GetFacetWithValues($id: ID!) {
+    facet(id: $id) {
+        ...FacetWithValues
+    }
+}

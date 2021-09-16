@@ -1,0 +1,6 @@
+query GetProductVariant($id: ID!) {
+    productVariant(id: $id) {
+        id
+        name
+    }
+}

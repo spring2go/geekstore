@@ -1,0 +1,10 @@
+fragment CustomerGroup on CustomerGroup {
+    id
+    name
+    customers {
+        items {
+            id
+        }
+        totalItems
+    }
+}

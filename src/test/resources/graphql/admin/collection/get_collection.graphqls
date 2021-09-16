@@ -1,0 +1,11 @@
+query GetCollection($id: ID, $slug: String) {
+    adminCollection(id: $id, slug: $slug) {
+        ...Collection
+        productVariants {
+            items {
+                id
+                name
+            }
+        }
+    }
+}

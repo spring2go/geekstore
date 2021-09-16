@@ -1,0 +1,6 @@
+mutation DeleteProductVairant($id: ID!) {
+    deleteProductVariant(id: $id) {
+        result
+        message
+    }
+}

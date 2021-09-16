@@ -1,0 +1,12 @@
+query GetCollectionsForProducts($term: String!) {
+    adminProducts(options: { filter: { name: {contains: $term }}}) {
+        items {
+            id
+            name
+            collections {
+                id
+                name
+            }
+        }
+    }
+}

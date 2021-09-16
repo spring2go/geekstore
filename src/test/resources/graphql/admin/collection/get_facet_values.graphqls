@@ -1,0 +1,9 @@
+query GetFacetValues {
+    facets {
+        items {
+            values {
+                ...FacetValue
+            }
+        }
+    }
+}

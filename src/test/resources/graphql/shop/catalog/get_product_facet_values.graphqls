@@ -1,0 +1,9 @@
+query GetProductFacetValues($id: ID!) {
+    product(id: $id) {
+        id
+        name
+        facetValues {
+            name
+        }
+    }
+}

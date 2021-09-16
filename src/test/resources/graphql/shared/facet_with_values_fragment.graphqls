@@ -1,0 +1,10 @@
+fragment FacetWithValues on Facet {
+    id
+    privateOnly
+    code
+    name
+    values {
+        ...FacetValue
+    }
+
+}

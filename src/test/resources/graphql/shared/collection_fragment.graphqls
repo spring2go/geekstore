@@ -1,0 +1,24 @@
+fragment Collection on Collection {
+    id
+    name
+    slug
+    description
+    privateOnly
+    featuredAsset {
+        ...Asset
+    }
+    assets {
+        ...Asset
+    }
+    filters {
+        ...ConfigurableOperation
+    }
+    parent {
+        id
+        name
+    }
+    children {
+        id
+        name
+    }
+}

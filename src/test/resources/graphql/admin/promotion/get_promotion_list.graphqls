@@ -1,0 +1,8 @@
+query GetPromotionList($options: PromotionListOptions) {
+    promotions(options: $options) {
+        items {
+            ...Promotion
+        }
+        totalItems
+    }
+}

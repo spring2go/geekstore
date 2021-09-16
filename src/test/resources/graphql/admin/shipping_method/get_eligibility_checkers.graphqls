@@ -1,0 +1,13 @@
+query GetEligibilityCheckers {
+    shippingEligibilityCheckers {
+        code
+        description
+        args {
+            name
+            type
+            description
+            label
+            ui
+        }
+    }
+}

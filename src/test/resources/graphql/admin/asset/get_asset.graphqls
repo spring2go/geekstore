@@ -1,0 +1,7 @@
+query GetAsset($id: ID!) {
+    asset(id: $id) {
+        ...Asset
+        width
+        height
+    }
+}

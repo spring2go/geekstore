@@ -1,0 +1,5 @@
+mutation ApplyCouponCode($couponCode: String!) {
+    applyCouponCode(couponCode: $couponCode) {
+        ...TestOrderFragment
+    }
+}

@@ -1,0 +1,96 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+type Query {
+    orderByAdmin(id: ID!): Order
+    orders(options: OrderListOptions): OrderList!
+}
+
+type Mutation {
+    settlePayment(id: ID!): Payment!
+    fulfillOrder(input: FulfillOrderInput!): Fulfillment!
+    cancelOrder(input: CancelOrderInput!): Order!
+    refundOrder(input: RefundOrderInput!): Refund!
+    settleRefund(input: SettleRefundInput!): Refund!
+    addNoteToOrder(input: AddNoteToOrderInput!): Order!
+    updateOrderNote(input: UpdateOrderNoteInput!): HistoryEntry!
+    deleteOrderNote(id: ID!): DeletionResponse!
+    transitionOrderToStateByAdmin(id: ID!, state: String!): Order
+}
+
+
+extend type Order {
+    nextStates: [String!]!
+}
+
+input OrderListOptions {
+    currentPage: Int
+    pageSize: Int
+    sort: OrderSortParameter
+    filter: OrderFilterParameter
+}
+
+input OrderFilterParameter {
+    createdAt: DateOperators
+    updatedAt: DateOperators
+    code: StringOperators
+    state: StringOperators
+    active: BooleanOperators
+    subTotal: NumberOperators
+    shipping: NumberOperators
+    total: NumberOperators
+}
+
+input OrderSortParameter {
+    id: SortOrder
+    createdAt: SortOrder
+    updatedAt: SortOrder
+    code: SortOrder
+    state: SortOrder
+    subTotal: SortOrder
+    shipping: SortOrder
+    total: SortOrder
+}
+
+input FulfillOrderInput {
+    lines: [OrderLineInput!]!
+    method: String!
+    trackingCode: String
+}
+
+input CancelOrderInput {
+    "The id of the order to be cancelled"
+    orderId: ID!
+    "Optionally specify which OrderLines to cancel. If not provided, all OrderLines will be cancelled"
+    lines: [OrderLineInput!]
+    reason: String
+}
+
+input RefundOrderInput {
+    lines: [OrderLineInput!]!
+    shipping: Int!
+    adjustment: Int!
+    paymentId: ID!
+    reason: String
+}
+
+input OrderLineInput {
+    orderLineId: ID!
+    quantity: Int!
+}
+
+input SettleRefundInput {
+    id: ID!
+    transactionId: String!
+}
+
+input AddNoteToOrderInput {
+    id: ID!
+    note: String!
+    privateOnly: Boolean!
+}
+
+input UpdateOrderNoteInput {
+    noteId: ID!
+    note: String
+    privateOnly: Boolean
+}

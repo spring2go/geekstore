@@ -1,0 +1,6 @@
+query GetProductSimple($id: ID, $slug: String) {
+    adminProduct(slug: $slug, id: $id) {
+        id
+        slug
+    }
+}

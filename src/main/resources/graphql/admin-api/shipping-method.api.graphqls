@@ -1,0 +1,82 @@
+extend type Query {
+    shippingMethods(options: ShippingMethodListOptions): ShippingMethodList!
+    shippingMethod(id: ID!): ShippingMethod
+    shippingEligibilityCheckers: [ConfigurableOperationDefinition!]!
+    shippingCalculators: [ConfigurableOperationDefinition!]!
+    testShippingMethod(input: TestShippingMethodInput!): TestShippingMethodResult!
+    testEligibleShippingMethods(input: TestEligibleShippingMethodsInput!): [ShippingMethodQuote!]!
+}
+
+extend type Mutation {
+    "Create a new ShippingMethod"
+    createShippingMethod(input: CreateShippingMethodInput!): ShippingMethod!
+    "Update an existing ShippingMethod"
+    updateShippingMethod(input: UpdateShippingMethodInput!): ShippingMethod!
+    "Delete a ShippingMethod"
+    deleteShippingMethod(id: ID!): DeletionResponse!
+}
+
+input ShippingMethodListOptions {
+    currentPage: Int
+    pageSize: Int
+    sort: ShippingMethodSortParameter
+    filter: ShippingMethodFilterParameter
+}
+
+input ShippingMethodSortParameter {
+    id: SortOrder
+    createdAt: SortOrder
+    updatedAt: SortOrder
+    code: SortOrder
+    description: SortOrder
+}
+
+input ShippingMethodFilterParameter {
+    createdAt: DateOperators
+    updatedAt: DateOperators
+    code: StringOperators
+    description: StringOperators
+}
+
+input CreateShippingMethodInput {
+    code: String!
+    description: String!
+    checker: ConfigurableOperationInput!
+    calculator: ConfigurableOperationInput!
+}
+
+input UpdateShippingMethodInput {
+    id: ID!
+    code: String
+    description: String
+    checker: ConfigurableOperationInput
+    calculator: ConfigurableOperationInput
+}
+
+input TestShippingMethodInput {
+    checker: ConfigurableOperationInput!
+    calculator: ConfigurableOperationInput!
+    shippingAddress: CreateAddressInput!
+    lines: [TestShippingMethodOrderLineInput!]!
+}
+
+input TestEligibleShippingMethodsInput {
+    shippingAddress: CreateAddressInput!
+    lines: [TestShippingMethodOrderLineInput!]!
+}
+
+input TestShippingMethodOrderLineInput {
+    productVariantId: ID!
+    quantity: Int!
+}
+
+type TestShippingMethodResult {
+    eligible: Boolean!
+    quote: TestShippingMethodQuote
+}
+
+type TestShippingMethodQuote {
+    price: Int!
+    description: String!
+    metadata: JSON
+}

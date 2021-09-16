@@ -1,0 +1,7 @@
+mutation UpdateOrderNote($input: UpdateOrderNoteInput!) {
+    updateOrderNote(input: $input) {
+        id
+        data
+        privateOnly
+    }
+}

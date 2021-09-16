@@ -1,0 +1,52 @@
+fragment OrderWithLines on Order {
+    id
+    createdAt
+    updatedAt
+    code
+    state
+    active
+    customer {
+        id
+        firstName
+        lastName
+    }
+    lines {
+        id
+        featuredAsset {
+            preview
+        }
+        productVariant {
+            id
+            name
+            sku
+        }
+        unitPrice
+        quantity
+        items {
+            ...OrderItem
+        }
+        totalPrice
+    }
+    adjustments {
+        ...Adjustment
+    }
+    subTotal
+    shipping
+    shippingMethod {
+        id
+        code
+        description
+    }
+    shippingAddress {
+        ...ShippingAddress
+    }
+    payments {
+        id
+        transactionId
+        amount
+        method
+        state
+        metadata
+    }
+    total
+}

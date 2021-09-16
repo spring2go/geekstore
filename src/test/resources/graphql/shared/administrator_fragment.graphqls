@@ -1,0 +1,19 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+fragment Administrator on Administrator {
+    id
+    firstName
+    lastName
+    emailAddress
+    user {
+        id
+        identifier
+        lastLogin
+        roles {
+            id
+            code
+            description
+            permissions
+        }
+    }
+}

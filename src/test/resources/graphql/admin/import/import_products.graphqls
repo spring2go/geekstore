@@ -1,0 +1,7 @@
+mutation ImportProducts($file: Upload!) {
+    importProducts(file: $file) {
+        imported
+        processed
+        errors
+    }
+}

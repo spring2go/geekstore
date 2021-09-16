@@ -1,0 +1,5 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+mutation Register($input: RegisterCustomerInput!) {
+    registerCustomerAccount(input: $input)
+}

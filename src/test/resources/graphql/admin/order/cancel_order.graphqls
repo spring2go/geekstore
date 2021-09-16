@@ -1,0 +1,12 @@
+mutation CancelOrder($input: CancelOrderInput!) {
+    cancelOrder(input: $input) {
+        id
+        lines {
+            quantity
+            items {
+                id
+                cancelled
+            }
+        }
+    }
+}

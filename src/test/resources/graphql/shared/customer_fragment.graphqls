@@ -1,0 +1,19 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+fragment Customer on Customer {
+    id
+    title
+    firstName
+    lastName
+    phoneNumber
+    emailAddress
+    user {
+        id
+        identifier
+        verified
+        lastLogin
+    }
+    addresses {
+        ...Address
+    }
+}

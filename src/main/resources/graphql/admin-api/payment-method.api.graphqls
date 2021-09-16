@@ -1,0 +1,43 @@
+
+extend type Query {
+    paymentMethods(options: PaymentMethodListOptions): PaymentMethodList!
+    paymentMethod(id: ID!): PaymentMethod
+}
+
+extend type Mutation {
+    "Update an existing PaymentMethod"
+    updatePaymentMethod(input: UpdatePaymentMethodInput!): PaymentMethod!
+}
+
+type PaymentMethodList implements PaginatedList {
+    items: [PaymentMethod!]!
+    totalItems: Int!
+}
+
+input PaymentMethodListOptions {
+    currentPage: Int
+    pageSize: Int
+    sort: PaymentMethodSortParameter
+    filter: PaymentMethodFilterParameter
+}
+
+input UpdatePaymentMethodInput {
+    id: ID!
+    code: String
+    enabled: Boolean
+    configArgs: [ConfigArgInput!]
+}
+
+input PaymentMethodFilterParameter {
+    createdAt: DateOperators
+    updatedAt: DateOperators
+    code: StringOperators
+    enabled: BooleanOperators
+}
+
+input PaymentMethodSortParameter {
+    id: SortOrder
+    createdAt: SortOrder
+    updatedAt: SortOrder
+    code: SortOrder
+}

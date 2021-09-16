@@ -1,0 +1,6 @@
+mutation CreateAddressShop($input: CreateAddressInput!) {
+    createCustomerAddress(input: $input) {
+        id
+        streetLine1
+    }
+}

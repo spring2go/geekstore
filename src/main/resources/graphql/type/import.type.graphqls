@@ -1,0 +1,7 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+type ImportInfo {
+    errors: [String!]
+    processed: Int!
+    imported: Int!
+}

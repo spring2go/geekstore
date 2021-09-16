@@ -1,0 +1,12 @@
+fragment VariantWithStock on ProductVariant {
+    id
+    stockOnHand
+    stockMovements {
+        items {
+            id
+            type
+            quantity
+        }
+        totalItems
+    }
+}

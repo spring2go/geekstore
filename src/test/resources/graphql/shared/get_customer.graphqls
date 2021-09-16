@@ -1,0 +1,18 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+query GetCustomer($id: ID! #, $orderListOptions: OrderListOptions) {
+) {
+    customer(id: $id) {
+        ...Customer
+#        orders(options: $orderListOptions) {
+#            items {
+#                id
+#                code
+#                state
+#                total
+#                updatedAt
+#            }
+#            totalItems
+#        }
+    }
+}

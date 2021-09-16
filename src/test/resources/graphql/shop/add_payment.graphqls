@@ -1,0 +1,13 @@
+mutation AddPaymentToOrder($input: PaymentInput!) {
+    addPaymentToOrder(input: $input) {
+        ...TestOrderFragment
+        payments {
+            id
+            transactionId
+            method
+            amount
+            state
+            metadata
+        }
+    }
+}

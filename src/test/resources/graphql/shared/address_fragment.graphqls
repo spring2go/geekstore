@@ -1,0 +1,15 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+fragment Address on Address {
+    id
+    fullName
+    company
+    streetLine1
+    streetLine2
+    city
+    province
+    postalCode
+    phoneNumber
+    defaultShippingAddress
+    defaultBillingAddress
+}

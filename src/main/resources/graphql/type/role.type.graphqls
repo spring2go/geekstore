@@ -1,0 +1,15 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+type Role implements Node {
+    id: ID!
+    createdAt: DateTime!
+    updatedAt: DateTime!
+    code: String!
+    description: String!
+    permissions: [Permission!]!
+}
+
+type RoleList implements PaginatedList {
+    items: [Role!]!
+    totalItems: Int!
+}

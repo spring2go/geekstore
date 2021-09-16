@@ -1,0 +1,10 @@
+query GetCustomerOrders($id: ID!) {
+    customer(id: $id) {
+        orders {
+            items {
+                id
+            }
+            totalItems
+        }
+    }
+}

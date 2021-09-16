@@ -1,0 +1,9 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+mutation AdminAttemptLogin($username: String!, $password: String!, $rememberMe: Boolean) {
+    adminLogin(username: $username, password: $password, rememberMe: $rememberMe) {
+        user {
+            ...CurrentUser
+        }
+    }
+}

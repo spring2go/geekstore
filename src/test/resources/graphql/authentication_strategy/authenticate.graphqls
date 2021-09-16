@@ -1,0 +1,10 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+mutation Authenticate($input: AuthenticationInput!) {
+    authenticate(input: $input) {
+        user {
+            id
+            identifier
+        }
+    }
+}

@@ -1,0 +1,9 @@
+query GetOrderPromotionsByCode($code: String!) {
+    orderByCode(code: $code) {
+        ...TestOrderFragment
+        promotions {
+            id
+            name
+        }
+    }
+}

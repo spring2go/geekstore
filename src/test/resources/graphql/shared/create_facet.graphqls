@@ -1,0 +1,5 @@
+mutation CreateFacet($input: CreateFacetInput!) {
+    createFacet(input: $input) {
+        ...FacetWithValues
+    }
+}

@@ -1,0 +1,15 @@
+mutation CreateAssets($files: [Upload!]!) {
+    createAssets(files: $files) {
+        id
+        name
+        fileSize
+        mimeType
+        type
+        preview
+        source
+        focalPoint {
+            x
+            y
+        }
+    }
+}

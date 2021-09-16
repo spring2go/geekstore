@@ -1,0 +1,13 @@
+query GetProductCollectionsWithParent($id: ID!) {
+    adminProduct(id: $id) {
+        id
+        collections {
+            id
+            name
+            parent {
+                id
+                name
+            }
+        }
+    }
+}

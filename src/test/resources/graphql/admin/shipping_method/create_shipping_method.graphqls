@@ -1,0 +1,5 @@
+mutation CreateShippingMethod($input: CreateShippingMethodInput!) {
+    createShippingMethod(input: $input) {
+        ...ShippingMethod
+    }
+}

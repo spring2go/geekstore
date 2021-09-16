@@ -1,0 +1,3 @@
+mutation RequestUpdateEmailAddress($password: String!, $newEmailAddress: String!) {
+    requestUpdateCustomerEmailAddress(password: $password, newEmailAddress: $newEmailAddress)
+}

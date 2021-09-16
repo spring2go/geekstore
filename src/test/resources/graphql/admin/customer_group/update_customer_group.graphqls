@@ -1,0 +1,5 @@
+mutation UpdateCustomerGroup($input: UpdateCustomerGroupInput!) {
+    updateCustomerGroup(input: $input) {
+        ...CustomerGroup
+    }
+}

@@ -1,0 +1,5 @@
+query GetOrderByCode($code: String!) {
+    orderByCode(code: $code) {
+        ...TestOrderFragment
+    }
+}

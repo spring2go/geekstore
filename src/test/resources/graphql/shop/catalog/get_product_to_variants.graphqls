@@ -1,0 +1,9 @@
+query GetProduct2Variants($id: ID) {
+    product(id: $id) {
+        id
+        variants {
+            id
+            name
+        }
+    }
+}

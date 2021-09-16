@@ -1,0 +1,5 @@
+mutation AdjustItemQuantity($orderLineId: ID!, $quantity: Int!) {
+    adjustOrderLine(orderLineId: $orderLineId, quantity: $quantity) {
+        ...TestOrderFragment
+    }
+}

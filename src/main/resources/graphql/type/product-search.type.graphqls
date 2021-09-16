@@ -1,0 +1,46 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+type SearchReindexResponse {
+    success: Boolean!
+}
+
+type SearchResponse {
+    items: [SearchResult!]!
+    totalItems: Int!
+    facetValues: [FacetValueResult!]!
+}
+
+"""
+Which FacetValues are present in the products returned
+by the search, and in what quantity.
+"""
+type FacetValueResult {
+    facetValue: FacetValue!
+    count: Int!
+}
+
+type SearchResultAsset {
+    id: ID!
+    preview: String!
+    focalPoint: Coordinate
+}
+
+type SearchResult {
+    sku: String!
+    slug: String!
+    enabled: Boolean!
+    productId: ID!
+    productName: String!
+    productAsset: SearchResultAsset
+    productVariantId: ID!
+    productVariantName: String!
+    productVariantAsset: SearchResultAsset
+    price: Int!
+    description: String!
+    facetIds: [ID!]!
+    facetValueIds: [ID!]!
+    "An array of ids of the Collections in which this result appears"
+    collectionIds: [ID!]!
+    "A relevence score for the result. Differs between database implementations"
+    score: Float!
+}

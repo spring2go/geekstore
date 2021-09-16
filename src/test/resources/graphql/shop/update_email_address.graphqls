@@ -1,0 +1,3 @@
+mutation UpdateEmailAddress($token: String!) {
+    updateCustomerEmailAddress(token: $token)
+}

@@ -1,0 +1,16 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+type Facet implements Node {
+    id: ID!
+    createdAt: DateTime!
+    updatedAt: DateTime!
+    name: String!
+    code: String!
+    privateOnly: Boolean! # visiable to Admin only, aka private
+    values: [FacetValue!]!
+}
+
+type FacetList implements PaginatedList {
+    items: [Facet!]!
+    totalItems: Int!
+}

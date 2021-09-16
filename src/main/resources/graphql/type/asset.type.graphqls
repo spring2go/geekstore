@@ -1,0 +1,32 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+type Asset implements Node {
+    id: ID!
+    createdAt: DateTime!
+    updatedAt: DateTime!
+    name: String!
+    type: AssetType!
+    fileSize: Int!
+    mimeType: String!
+    width: Int!
+    height: Int!
+    source: String!
+    preview: String!
+    focalPoint: Coordinate
+}
+
+type Coordinate {
+    x: Float!
+    y: Float!
+}
+
+type AssetList implements PaginatedList {
+    items: [Asset!]!
+    totalItems: Int!
+}
+
+enum AssetType {
+    IMAGE,
+    VIDEO,
+    BINARY
+}

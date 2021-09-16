@@ -1,0 +1,9 @@
+query TestShippingMethod($input: TestShippingMethodInput!) {
+    testShippingMethod(input: $input) {
+        eligible
+        quote {
+            price
+            metadata
+        }
+    }
+}

@@ -1,0 +1,19 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+extend type Query {
+    adminMe: CurrentUser
+}
+
+extend type Mutation {
+    "Authenticates the user using the native authentication strategy. This mutatation is an alias for `authenticate({ native: { ... }})"
+    adminLogin(username: String!, password: String!, rememberMe: Boolean): LoginResult!
+    "Authenticates the admin user using a named authentication strategy"
+    adminAuthenticate(input: AuthenticationInput!, rememberMe: Boolean): LoginResult!
+    adminLogout: Boolean!
+}
+
+# Populated at run-time
+input AuthenticationInput {
+    method: String!
+    data: JSON!
+}

@@ -1,0 +1,28 @@
+mutation AddItemToOrder($productVariantId: ID!, $quantity: Int!) {
+    addItemToOrder(productVariantId: $productVariantId, quantity: $quantity) {
+        id
+        code
+        state
+        active
+        total
+        lines {
+            id
+            quantity
+            productVariant {
+                id
+            }
+            adjustments {
+                adjustmentSource
+                amount
+                description
+                type
+            }
+        }
+        adjustments {
+            adjustmentSource
+            amount
+            description
+            type
+        }
+    }
+}

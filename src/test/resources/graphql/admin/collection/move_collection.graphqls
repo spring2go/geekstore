@@ -1,0 +1,5 @@
+mutation MoveCollection($input: MoveCollectionInput!) {
+    moveCollection(input: $input) {
+        ...Collection
+    }
+}

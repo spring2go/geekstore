@@ -1,0 +1,29 @@
+fragment ProductVariant on ProductVariant {
+    id
+    enabled
+    name
+    price
+    stockOnHand
+    trackInventory
+    sku
+    options {
+        id
+        code
+        name
+    }
+    facetValues {
+        id
+        code
+        name
+        facet {
+            id
+            name
+        }
+    }
+    featuredAsset {
+        ...Asset
+    }
+    assets {
+        ...Asset
+    }
+}

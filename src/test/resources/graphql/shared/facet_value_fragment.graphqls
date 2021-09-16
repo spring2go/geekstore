@@ -1,0 +1,9 @@
+fragment FacetValue on FacetValue {
+    id
+    code
+    name
+    facet {
+        id
+        name
+    }
+}

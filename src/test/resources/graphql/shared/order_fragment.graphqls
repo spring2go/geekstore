@@ -1,0 +1,13 @@
+fragment Order on Order {
+    id
+    createdAt
+    updatedAt
+    code
+    state
+    total
+    customer {
+        id
+        firstName
+        lastName
+    }
+}

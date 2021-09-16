@@ -1,0 +1,11 @@
+mutation RefundOrder($input: RefundOrderInput!) {
+    refundOrder(input: $input) {
+        id
+        state
+        items
+        transactionId
+        shipping
+        total
+        metadata
+    }
+}

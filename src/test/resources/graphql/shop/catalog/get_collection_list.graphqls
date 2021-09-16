@@ -1,0 +1,8 @@
+query GetCollectionList {
+    collections {
+        items {
+            id
+            name
+        }
+    }
+}

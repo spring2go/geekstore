@@ -1,0 +1,5 @@
+mutation CreateProductOptionGroup($input: CreateProductOptionGroupInput!) {
+    createProductOptionGroup(input: $input) {
+        ...ProductOptionGroup
+    }
+}

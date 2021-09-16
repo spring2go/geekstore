@@ -1,0 +1,10 @@
+query GetOptionGroup($id: ID!) {
+    productOptionGroup(id: $id) {
+        id
+        code
+        options {
+            id
+            code
+        }
+    }
+}

@@ -1,0 +1,10 @@
+query GetCustomerAddresses {
+    activeOrder {
+        customer {
+            addresses {
+                id
+                streetLine1
+            }
+        }
+    }
+}

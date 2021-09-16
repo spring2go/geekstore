@@ -1,0 +1,16 @@
+query GetOrderHistory($id: ID!, $options: HistoryEntryListOptions) {
+    orderByAdmin(id: $id) {
+        id
+        history(options: $options) {
+            totalItems
+            items {
+                id
+                type
+                administrator {
+                    id
+                }
+                data
+            }
+        }
+    }
+}

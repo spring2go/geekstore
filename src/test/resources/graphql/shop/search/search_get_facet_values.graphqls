@@ -1,0 +1,12 @@
+query SearchFacetValues($input: SearchInput!) {
+    search(input: $input) {
+        totalItems
+        facetValues {
+            count
+            facetValue {
+                id
+                name
+            }
+        }
+    }
+}

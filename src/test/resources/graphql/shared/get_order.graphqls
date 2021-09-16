@@ -1,0 +1,5 @@
+query GetOrder($id: ID!) {
+    orderByAdmin(id: $id) {
+        ...OrderWithLines
+    }
+}

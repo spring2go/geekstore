@@ -1,0 +1,7 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+mutation CanCreateCustomer($input: CreateCustomerInput!) {
+    createCustomer(input: $input) {
+        id
+    }
+}

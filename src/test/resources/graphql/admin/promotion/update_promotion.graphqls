@@ -1,0 +1,5 @@
+mutation UpdatePromotion($input: UpdatePromotionInput!) {
+    updatePromotion(input: $input) {
+        ...Promotion
+    }
+}

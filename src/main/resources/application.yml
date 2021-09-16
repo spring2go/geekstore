@@ -1,0 +1,70 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+
+# database init, supports mysql too
+database: h2
+
+spring:
+  datasource:
+    schema: classpath*:db/${database}/schema.sql
+    data: classpath*:db/${database}/data.sql
+    url: jdbc:h2:mem:testdb;MODE=MYSQL;IGNORECASE=TRUE
+    driver-class-name: org.h2.Driver
+  output:
+    ansi:
+      enabled: always
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# Logging
+logging:
+  level:
+    org.springframework: info
+    io.geekstore: warn
+    graphql: warn
+    # https://github.com/graphql-java-kickstart/graphql-spring-boot/issues/432
+    notprivacysafe.graphql: warn
+
+geekstore:
+  company-name: ${COMPANY_NAME:GEEKSTORE}
+  auth-options:
+    disable-auth: ${DISABLE_AUTH:false}
+    token-method: ${TOKEN_MEHTOD:cookie}
+    cookie-options:
+      http-only: ${COOKIE_HTTP_ONLY:true}
+    auth-token-header-key: ${AUTH_TOKEN_HEADER_KEY:geekstore-shared-token}
+    session-duration: ${SESSION_DURATION:1y}
+    session-cache-ttl: ${SESSION_CACHE_TTL:300}
+    require-verification: ${REQUIRE_VERIFICATION:true}
+    verification-token-duration: ${VERIFICATION_TOKEN_DURATION:7d}
+    superadmin-credentials:
+      identifier: ${SUPERADMIN_IDENTIFIER:superadmin}
+      password: ${SUPADMIN_PASSWORD:superadmin123}
+  email-options:
+    transport: ${EMAIL_TRANSPORT:file}
+    output-path: ${EMAIL_FILE_OUTPUT_PATH:test-emails}
+    default-from-email: ${DEFAULT_FROM_EMAIL:admin@geekstore.io}
+    verify-email-address-url: ${VERIFY_EMAIL_ADDRESS_URL:http://localhost:4201/verify}
+    password-reset-url: ${PASSWORD_RESET_URL:http://localhost:4201/reset-password}
+    change-email-address-url: ${CHANGE_EMAIL_ADDRESS_URL:http://localhost:4201/change-email-address}
+  asset-options:
+    upload-max-file-size: ${UPLOAD_MAX_FILE_SIZE:20971520}
+    permitted-file-types:
+      - image/*
+      - video/*
+      - audio/*
+      - application/pdf
+
+
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

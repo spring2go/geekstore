@@ -1,0 +1,7 @@
+extend type Query {
+    searchByAdmin(input: SearchInput!): SearchResponse!
+}
+
+extend type Mutation {
+    reindex: SearchReindexResponse!
+}

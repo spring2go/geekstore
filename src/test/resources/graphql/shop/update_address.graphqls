@@ -1,0 +1,5 @@
+mutation UpdateAddressShop($input: UpdateAddressInput!) {
+    updateCustomerAddress(input: $input) {
+        streetLine1
+    }
+}

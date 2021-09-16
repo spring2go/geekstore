@@ -1,0 +1,7 @@
+mutation AdminTransition($id: ID!, $state: String!) {
+    transitionOrderToStateByAdmin(id: $id, state: $state) {
+        id
+        state
+        nextStates
+    }
+}

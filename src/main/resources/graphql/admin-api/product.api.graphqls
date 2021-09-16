@@ -1,0 +1,116 @@
+extend type Query {
+    adminProducts(options: ProductListOptions): ProductList!
+    "Get a Product either by id or slug. If neither id nor slug is specified, an error will result."
+    adminProduct(id: ID, slug: String): Product
+    "Get a ProductVariant by id"
+    productVariant(id: ID!): ProductVariant
+}
+
+extend type Mutation {
+    "Create a new Product"
+    createProduct(input: CreateProductInput!): Product!
+
+    "Update an existing Product"
+    updateProduct(input: UpdateProductInput!): Product!
+
+    "Delete a Product"
+    deleteProduct(id: ID!): DeletionResponse!
+
+    "Add an OptionGroup to a Product"
+    addOptionGroupToProduct(productId: ID!, optionGroupId: ID!): Product!
+
+    "Remove an OptionGroup from a Product"
+    removeOptionGroupFromProduct(productId: ID!, optionGroupId: ID!): Product!
+
+    "Create a set of ProductVariants based on the OptionGroups assigned to the given Product"
+    createProductVariants(input: [CreateProductVariantInput!]!): [ProductVariant]!
+
+    "Update exisiting ProductVariants"
+    updateProductVariants(input: [UpdateProductVariantInput!]!): [ProductVariant]!
+
+    "Delete a ProductVariant"
+    deleteProductVariant(id: ID!): DeletionResponse!
+}
+
+input StockMovementListOptions {
+    currentPage: Int
+    pageSize: Int
+    type: StockMovementType
+}
+
+input ProductListOptions {
+    currentPage: Int
+    pageSize: Int
+    sort: ProductSortParameter
+    filter: ProductFilterParameter
+}
+
+input ProductSortParameter {
+    id: SortOrder
+    createdAt: SortOrder
+    updatedAt: SortOrder
+    name: SortOrder
+    slug: SortOrder
+    description: SortOrder
+}
+
+input ProductFilterParameter {
+    enabled: BooleanOperators #admin only
+    createdAt: DateOperators
+    updatedAt: DateOperators
+    name: StringOperators
+    slug: StringOperators
+    description: StringOperators
+}
+
+input CreateProductInput {
+    featuredAssetId: ID
+    assetIds: [ID!]
+    facetValueIds: [ID!]
+    name: String
+    slug: String
+    description: String
+}
+
+input UpdateProductInput {
+    id: ID!
+    enabled: Boolean
+    featuredAssetId: ID
+    assetIds: [ID!]
+    facetValueIds: [ID!]
+    name: String
+    slug: String
+    description: String
+}
+
+#input CreateProductVariantOptionInput {
+#    optionGroupId: ID!
+#    code: String!
+#    name: String!
+#}
+
+input CreateProductVariantInput {
+    productId: ID!
+    name: String
+    facetValueIds: [ID!]
+    sku: String!
+    price: Int
+    optionIds: [ID!]
+    featuredAssetId: ID
+    assetIds: [ID!]
+    stockOnHand: Int
+    trackInventory: Boolean
+}
+
+input UpdateProductVariantInput {
+    id: ID!
+    enabled: Boolean
+    name: String
+    facetValueIds: [ID!]
+    sku: String
+    price: Int
+    featuredAssetId: ID
+    assetIds: [ID!]
+    stockOnHand: Int
+    trackInventory: Boolean
+}

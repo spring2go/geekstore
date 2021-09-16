@@ -1,0 +1,8 @@
+query GetAssetList($options: AssetListOptions) {
+    assets(options: $options) {
+        items {
+            ...Asset
+        }
+        totalItems
+    }
+}

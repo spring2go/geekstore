@@ -1,0 +1,8 @@
+query GetStockMovement($id: ID!) {
+    adminProduct(id: $id) {
+        id
+        variants {
+            ...VariantWithStock
+        }
+    }
+}

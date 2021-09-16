@@ -1,0 +1,5 @@
+mutation UpdateProductVariants($input: [UpdateProductVariantInput!]!) {
+    updateProductVariants(input: $input) {
+        ...ProductVariant
+    }
+}

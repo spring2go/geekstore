@@ -1,0 +1,9 @@
+fragment ConfigurableOperationDef on ConfigurableOperationDefinition {
+    args {
+        name
+        type
+        ui
+    }
+    code
+    description
+}

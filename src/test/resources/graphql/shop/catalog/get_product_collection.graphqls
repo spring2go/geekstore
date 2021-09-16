@@ -1,0 +1,8 @@
+query GetProductCollection {
+    product(id: 12) {
+        collections {
+            id
+            name
+        }
+    }
+}

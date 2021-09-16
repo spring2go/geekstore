@@ -1,0 +1,10 @@
+fragment ProductOptionGroup on ProductOptionGroup {
+    id
+    code
+    name
+    options {
+        id
+        code
+        name
+    }
+}

@@ -1,0 +1,11 @@
+query GetCustomerOrders {
+    activeOrder {
+        customer {
+            orders {
+                items {
+                    id
+                }
+            }
+        }
+    }
+}

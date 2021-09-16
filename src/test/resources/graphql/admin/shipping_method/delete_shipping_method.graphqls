@@ -1,0 +1,6 @@
+mutation DeleteShippingMethod($id: ID!) {
+    deleteShippingMethod(id: $id) {
+        result
+        message
+    }
+}

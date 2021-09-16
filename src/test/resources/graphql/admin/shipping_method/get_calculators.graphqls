@@ -1,0 +1,13 @@
+query GetCalculators {
+    shippingCalculators {
+        code
+        description
+        args {
+            name
+            type
+            description
+            label
+            ui
+        }
+    }
+}

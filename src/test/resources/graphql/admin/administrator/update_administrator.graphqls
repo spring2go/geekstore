@@ -1,0 +1,7 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+mutation UpdateAdministrator($input: UpdateAdministratorInput!) {
+    updateAdministrator(input: $input) {
+        ...Administrator
+    }
+}

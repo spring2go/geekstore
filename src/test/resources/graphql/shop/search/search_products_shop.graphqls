@@ -1,0 +1,21 @@
+query SearchProductShop($input: SearchInput!) {
+    search(input: $input) {
+        totalItems
+        items {
+            productId
+            productName
+            productAsset {
+                preview
+            }
+            productVariantId
+            productVariantName
+            productVariantAsset {
+                preview
+            }
+            sku
+            collectionIds
+            price
+            facetValueIds
+        }
+    }
+}

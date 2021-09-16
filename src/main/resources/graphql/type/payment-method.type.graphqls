@@ -1,0 +1,11 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+type PaymentMethod implements Node {
+    id: ID!
+    createdAt: DateTime!
+    updatedAt: DateTime!
+    code: String!
+    enabled: Boolean!
+    configArgs: [ConfigArg!]!
+    definition: ConfigurableOperationDefinition!
+}

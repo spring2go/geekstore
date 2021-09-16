@@ -1,0 +1,9 @@
+query GetProductCollections($id: ID!) {
+    adminProduct(id: $id) {
+        id
+        collections {
+            id
+            name
+        }
+    }
+}

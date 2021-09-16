@@ -1,0 +1,6 @@
+mutation DeleteCustomerGroup($id: ID!) {
+    deleteCustomerGroup(id: $id) {
+        result
+        message
+    }
+}

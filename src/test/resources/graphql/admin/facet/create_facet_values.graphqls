@@ -1,0 +1,5 @@
+mutation CreateFacetValues($input: [CreateFacetValueInput!]!) {
+    createFacetValues(input: $input) {
+        ...FacetValue
+    }
+}

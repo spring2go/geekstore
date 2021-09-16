@@ -1,0 +1,5 @@
+query GetActiveOrder {
+    activeOrder {
+        ...TestOrderFragment
+    }
+}

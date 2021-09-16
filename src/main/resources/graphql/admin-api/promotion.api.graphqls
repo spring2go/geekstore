@@ -1,0 +1,65 @@
+
+extend type Query {
+    promotion(id: ID!): Promotion
+    promotions(options: PromotionListOptions): PromotionList!
+    promotionConditions: [ConfigurableOperationDefinition!]!
+    promotionActions: [ConfigurableOperationDefinition!]!
+}
+
+extend type Mutation {
+    createPromotion(input: CreatePromotionInput!): Promotion!
+    updatePromotion(input: UpdatePromotionInput!): Promotion!
+    deletePromotion(id: ID!): DeletionResponse!
+}
+
+input PromotionListOptions {
+    currentPage: Int
+    pageSize: Int
+    sort: PromotionSortParameter
+    filter: PromotionFilterParameter
+}
+
+input PromotionFilterParameter {
+    createdAt: DateOperators
+    updatedAt: DateOperators
+    startsAt: DateOperators
+    endsAt: DateOperators
+    couponCode: StringOperators
+    perCustomerUsageLimit: NumberOperators
+    name: StringOperators
+    enabled: BooleanOperators
+}
+
+input PromotionSortParameter {
+    id: SortOrder
+    createdAt: SortOrder
+    updatedAt: SortOrder
+    startsAt: SortOrder
+    endsAt: SortOrder
+    couponCode: SortOrder
+    perCustomerUsageLimit: SortOrder
+    name: SortOrder
+}
+
+input CreatePromotionInput {
+    name: String!
+    enabled: Boolean!
+    startsAt: DateTime
+    endsAt: DateTime
+    couponCode: String
+    perCustomerUsageLimit: Int
+    conditions: [ConfigurableOperationInput!]!
+    actions: [ConfigurableOperationInput!]!
+}
+
+input UpdatePromotionInput {
+    id: ID!
+    name: String
+    enabled: Boolean
+    startsAt: DateTime
+    endsAt: DateTime
+    couponCode: String
+    perCustomerUsageLimit: Int
+    conditions: [ConfigurableOperationInput!]
+    actions: [ConfigurableOperationInput!]
+}

@@ -1,0 +1,16 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+type ShippingMethod implements Node {
+    id: ID!
+    createdAt: DateTime!
+    updatedAt: DateTime!
+    code: String!
+    description: String!
+    checker: ConfigurableOperation!
+    calculator: ConfigurableOperation!
+}
+
+type ShippingMethodList implements PaginatedList {
+    items: [ShippingMethod!]!
+    totalItems: Int!
+}

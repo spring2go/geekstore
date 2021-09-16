@@ -1,0 +1,5 @@
+mutation AddNoteToOrder($input: AddNoteToOrderInput!) {
+    addNoteToOrder(input: $input) {
+        id
+    }
+}

@@ -1,0 +1,11 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+type LoginResult {
+    user: CurrentUser!
+}
+
+type CurrentUser {
+    id: ID!
+    identifier: String!
+    permissions: [Permission!]!
+}

@@ -1,0 +1,23 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+type Customer implements Node {
+    id: ID!
+    createdAt: DateTime!
+    updatedAt: DateTime!
+    title: String
+    firstName: String!
+    lastName: String!
+    phoneNumber: String
+    emailAddress: String!
+    addresses: [Address!]
+    orders(options: OrderListOptions): OrderList!
+    user: User
+    groups: [CustomerGroup!]!
+    # 该字段对shop api只可见public公开的历史记录
+    history(options: HistoryEntryListOptions): HistoryEntryList
+}
+
+type CustomerList implements PaginatedList {
+    items: [Customer!]!
+    totalItems: Int!
+}

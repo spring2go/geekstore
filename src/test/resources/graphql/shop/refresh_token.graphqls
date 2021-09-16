@@ -1,0 +1,3 @@
+mutation RefreshToken($emailAddress: String!) {
+    refreshCustomerVerification(emailAddress: $emailAddress)
+}

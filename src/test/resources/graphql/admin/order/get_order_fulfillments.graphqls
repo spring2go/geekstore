@@ -1,0 +1,9 @@
+query GetOrderFulfillments($id: ID!) {
+    orderByAdmin(id: $id) {
+        id
+        fulfillments {
+            id
+            method
+        }
+    }
+}

@@ -1,0 +1,13 @@
+mutation AddOptionGroupToProduct($productId: ID!, $optionGroupId: ID!) {
+    addOptionGroupToProduct(productId: $productId, optionGroupId: $optionGroupId) {
+        id
+        optionGroups {
+            id
+            code
+            options {
+                id
+                code
+            }
+        }
+    }
+}

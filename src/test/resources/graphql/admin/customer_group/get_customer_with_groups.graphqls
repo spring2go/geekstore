@@ -1,0 +1,9 @@
+query GetCustomerWithGroups($id: ID!) {
+    customer(id: $id) {
+        id
+        groups {
+            id
+            name
+        }
+    }
+}

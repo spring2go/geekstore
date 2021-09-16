@@ -1,0 +1,7 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+query GetCustomerCount {
+    customers {
+        totalItems
+    }
+}

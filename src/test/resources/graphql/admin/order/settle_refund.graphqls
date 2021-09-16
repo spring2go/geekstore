@@ -1,0 +1,11 @@
+mutation SettleRefund($input: SettleRefundInput!) {
+    settleRefund(input: $input) {
+        id
+        state
+        items
+        transactionId
+        shipping
+        total
+        metadata
+    }
+}

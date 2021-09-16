@@ -1,0 +1,5 @@
+mutation RemoveCustomersFromGroup($groupId: ID!, $customerIds: [ID!]!) {
+    removeCustomersFromGroup(customerGroupId: $groupId, customerIds: $customerIds) {
+        ...CustomerGroup
+    }
+}

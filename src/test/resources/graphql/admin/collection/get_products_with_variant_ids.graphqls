@@ -1,0 +1,12 @@
+query GetProductsWithVariantIds {
+    adminProducts(options: {sort: {id: ASC}}) {
+        items {
+            id
+            name
+            variants {
+                id
+                name
+            }
+        }
+    }
+}

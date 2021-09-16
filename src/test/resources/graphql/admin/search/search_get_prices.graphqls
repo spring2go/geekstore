@@ -1,0 +1,7 @@
+query SearchGetPrices($input: SearchInput!) {
+    searchByAdmin(input: $input) {
+        items {
+            price
+        }
+    }
+}

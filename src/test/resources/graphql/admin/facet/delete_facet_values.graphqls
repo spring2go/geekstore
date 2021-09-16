@@ -1,0 +1,6 @@
+mutation DeleteFacetValues($ids: [ID!]!) {
+    deleteFacetValues(ids: $ids) {
+        result
+        message
+    }
+}

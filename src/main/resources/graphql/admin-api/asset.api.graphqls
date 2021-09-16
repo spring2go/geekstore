@@ -1,0 +1,52 @@
+extend type Query {
+    "Get a list of Assets"
+    assets(options: AssetListOptions): AssetList!
+    "Get a single Asset by id"
+    asset(id: ID!): Asset
+}
+
+extend type Mutation {
+    "Create new Assets"
+    createAssets(files: [Upload!]!): [Asset!]!
+    "Create one new Asset"
+    createAsset(file: Upload!): Asset!
+    "Update an existing Asset"
+    updateAsset(input: UpdateAssetInput!): Asset!
+    "Delete an Asset"
+    deleteAsset(id: ID!): DeletionResponse!
+    "Delete multiple Assets"
+    deleteAssets(ids: [ID!]): DeletionResponse!
+}
+
+
+input CoordinateInput {
+    x: Float!
+    y: Float!
+}
+
+input UpdateAssetInput {
+    id: ID!
+    name: String
+    focalPoint: CoordinateInput
+}
+
+input AssetListOptions {
+    currentPage: Int
+    pageSize: Int
+    sort: AssetSortParameter
+    filter: AssetFilterParameter
+}
+
+input AssetSortParameter {
+    id: SortOrder
+    name: SortOrder
+    createdAt: SortOrder
+    updatedAt: SortOrder
+}
+
+input AssetFilterParameter {
+    name: StringOperators
+    type: StringOperators
+    createdAt: DateOperators
+    updatedAt: DateOperators
+}

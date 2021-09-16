@@ -1,0 +1,10 @@
+# Copyright (c) 2020 GeekStore.
+# All rights reserved.
+mutation UpdateAddress($input: UpdateAddressInput!) {
+    adminUpdateCustomerAddress(input: $input) {
+        id
+        city
+        defaultShippingAddress
+        defaultBillingAddress
+    }
+}

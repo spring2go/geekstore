@@ -1,0 +1,11 @@
+fragment ShippingMethod on ShippingMethod {
+    id
+    code
+    description
+    calculator {
+        code
+    }
+    checker {
+        code
+    }
+}

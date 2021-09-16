@@ -1,0 +1,14 @@
+query GetCollectionProducts($id: ID!) {
+    adminCollection(id: $id) {
+        productVariants(options: { sort: { id: ASC }}) {
+            items {
+                id
+                name
+                facetValues {
+                    code
+                }
+                productId
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+fragment TestOrderFragment on Order {
+    id
+    code
+    state
+    active
+    total
+    couponCodes
+    adjustments {
+        adjustmentSource
+        amount
+        description
+        type
+    }
+    lines {
+        id
+        quantity
+        productVariant {
+            id
+        }
+        adjustments {
+            adjustmentSource
+            amount
+            description
+            type
+        }
+    }
+    shipping
+    shippingMethod {
+        id
+        code
+        description
+    }
+    customer {
+        id
+        user {
+            id
+            identifier
+        }
+    }
+    history {
+        items {
+            id
+            type
+            data
+        }
+    }
+}

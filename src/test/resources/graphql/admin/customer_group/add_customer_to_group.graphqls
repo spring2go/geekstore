@@ -1,0 +1,5 @@
+mutation AddCustomersToGroup($groupId: ID!, $customerIds: [ID!]!) {
+    addCustomersToGroup(customerGroupId: $groupId, customerIds: $customerIds) {
+        ...CustomerGroup
+    }
+}
