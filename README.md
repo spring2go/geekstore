@@ -2,13 +2,12 @@
 
 A developer oriented, headless ecommerce framework based on Spring + GraphQL + Angular.
 
-> **Headless** means GeekStore only focus on backend, it does not care which frontend stack you use.
-> GeekStore is built for developers, it only exposes a group of ecommerce Admin&Shop APIs(in GraphQL), by calling these APIs, developers
-> can query data(such as query product data), or mutate data(such as add item with id '123' into current order).
-> So, if you want to develop ecommerce application based on GeekStore, you just need to implement the store frontend
-> based on your specific business needs. For example, you can leverage Angular/React/Vue, whatever frontend stack you like to build your store
-> frontend. You just don't need to re-build the backend, since GeekShop is already there, it's an ecommerce platform
-> without a 'head'.
+> **Headless** means GeekStore only focus on the backend, it does not care which frontend stack you use.
+> GeekStore is built for developers, it only exposes a group of ecommerce admin&shop APIs(in GraphQL), by calling these APIs, developers
+> can query data(such as query product data), or mutate data(such as add item with id '123' to the current order).
+> So, if you want to develop ecommerce application based on GeekStore, you just need to implement the shopping frontend
+> based on your specific business needs. For example, you can leverage Angular/React/Vue, whatever frontend stack you like to build your
+> shopping UI. There is no need to re-build the backend, since GeekStore is an ecommerce backend without a 'head'.
 
 > GeekStore is licensed with MIT license, you can change/extend as you need.
 
@@ -43,14 +42,14 @@ A developer oriented, headless ecommerce framework based on Spring + GraphQL + A
 
 ### 1. How To Run Test
 
-Run unit + components tests via maven:
+Run unit + component tests via maven:
 
 ```shell
 mvn clean test
 ```
 
 **527** test cases have been written, cover most framework & biz logic, all test cases pass when run locally.
-Use embedded H2 Db by default in local test mode.
+Use embedded H2 DB by default in local test mode.
 
 ```shell
 [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.42 s - in io.geekstore.e2e.StockControlTest
@@ -79,7 +78,7 @@ Run app via maven:
 mvn spring-boot:run
 ```
 
-Or run it in Intellij IDE, the main driver class is **GeekStoreApplication**. It will use embedded H2 Db by default.
+Or run it in Intellij IDE, the main driver class is **GeekStoreApplication**. It will use embedded H2 DB by default.
 
 Then you can play the Store Admin & Shop API via the `GraphQL Playground`：
 
@@ -141,7 +140,7 @@ Resources source
     ├── application.yml # Default spring configration file，support h2 db by default
     ├── banner.txt # banner
     ├── db
-    │   ├── h2 # H2 Db schema
+    │   ├── h2 # H2 db schema
     │   └── mysql # MySql db schema
     ├── graphql
     │   ├── admin-api # Admin side GraphQL API schemas
@@ -185,7 +184,7 @@ Resources Source for Test：
 ## Attribution
 
 The project is a partial clone of the [vendure](https://github.com/vendure-ecommerce/vendure) headless ecommerce framework.
-The original project is based on TypeScript/Nestjs/Angular tech stack. Thanks for author's contribution🙏
+The original project is based on TypeScript/Nestjs/Angular tech stack. Thanks to the author🙏
 
 ## Copyright
 
