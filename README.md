@@ -92,6 +92,12 @@ Or you can access the GraphQL endpoint via Postman(latest version supporting Gra
 http://127.0.0.1:8080/graphql
 ```
 
+To access GraphQL Voyager for interactive graph:
+
+```shell
+http://localhost:8080/voyager
+```
+
 ## TODO List
 
 - [ ] Replace [graphql-java-kickstart](https://github.com/graphql-java-kickstart/graphql-spring-boot) with [Netflix DGS framework](https://netflix.github.io/dgs/)

@@ -127,6 +127,12 @@
       <artifactId>graphql-java-extended-scalars</artifactId>
       <version>1.0.1</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/com.graphql-java-kickstart/voyager-spring-boot-starter -->
+    <dependency>
+      <groupId>com.graphql-java-kickstart</groupId>
+      <artifactId>voyager-spring-boot-starter</artifactId>
+      <version>7.1.0</version>
+    </dependency>
     <!-- graphql testing facilities -->
     <dependency>
       <groupId>com.graphql-java-kickstart</groupId>
